@@ -1,0 +1,27 @@
+project:
+  type: website
+
+website:
+  draft-mode: gone
+  description: "A blog built with Quarto"
+  site-url: https://thecuriouspiper.com # you must change this appropriately for RSS feeds to work properly
+  title: "The Curious Piper"
+  open-graph: true
+  twitter-card: true
+  navbar:
+    left:
+      - text: Home
+        href: index.qmd
+      - text: About
+        href: about.qmd
+    right:
+      - icon: youtube
+        href: https://www.youtube.com/@TheCuriousPiper
+  page-footer: 
+    left: "© 2026 The Curious Piper"
+format:
+  html:
+    theme:
+      - cosmo
+    css: styles.css
+
