@@ -1,0 +1,9 @@
+[build]
+  publish = "_site"
+  command = "echo 'Build handled by Quarto Netlify plugin'"
+
+[[plugins]]
+  package = "@quarto/netlify-plugin-quarto"
+
+  [plugins.inputs]
+    version = "1.8.26"
