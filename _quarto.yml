@@ -2,6 +2,7 @@ project:
   type: website
 
 website:
+  google-analytics: "G-MLL9M280YV"
   draft-mode: gone
   description: "A blog built with Quarto"
   site-url: https://thecuriouspiper.com # you must change this appropriately for RSS feeds to work properly
