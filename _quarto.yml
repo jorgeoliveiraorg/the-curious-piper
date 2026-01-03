@@ -5,11 +5,12 @@ website:
   google-analytics: "G-MLL9M280YV"
   draft-mode: gone
   description: "A blog built with Quarto"
-  site-url: https://thecuriouspiper.com # you must change this appropriately for RSS feeds to work properly
+  site-url: https://www.thecuriouspiper.com # you must change this appropriately for RSS feeds to work properly
   title: "The Curious Piper"
   open-graph: true
   twitter-card: true
   navbar:
+    logo: assets/logo.png
     left:
       - text: Home
         href: index.qmd
@@ -18,11 +19,13 @@ website:
     right:
       - icon: youtube
         href: https://www.youtube.com/@TheCuriousPiper
+      - icon: rss
+        href: index.xml
   page-footer: 
-    left: "© 2026 The Curious Piper"
+    center: "© 2026 The Curious Piper"
 format:
   html:
     theme:
-      - cosmo
+      - litera
     css: styles.css
 

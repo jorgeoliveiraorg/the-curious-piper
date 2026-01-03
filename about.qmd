@@ -1,7 +1,7 @@
 ---
 title: "About"
-image: profile.jpg
-image-alt: "Portrait of Jorge, creator of The Curious Piper"
+image: assets/logo.png
+image-alt: "The Curious Piper logo"
 about:
   template: jolla
 ---

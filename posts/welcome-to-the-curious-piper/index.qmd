@@ -1,8 +1,9 @@
 ---
-draft: true
+draft: false
 title: "Welcome to The Curious Piper"
 date: 2026-01-02
 description: "What this blog is about, and what you can expect next."
+image: thumbnail.jpg
 categories: [welcome]
 ---
 

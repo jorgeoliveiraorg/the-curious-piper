@@ -1,1 +1,65 @@
-/* css styles */
+/* Readability tweak: comfortable measure + spacing */
+main.content {
+  max-width: 72ch;
+}
+
+.content p,
+.content li {
+  line-height: 1.7;
+}
+
+/* --- The Curious Piper palette (from logo) --- */
+:root{
+  --tcp-ink: #0B0D13;     /* readable charcoal */
+  --tcp-paper: #F9F5E8;   /* warm parchment */
+  --tcp-copper: #C2410C;  /* deepened orange for link contrast */
+  --tcp-copper-hover: #7D3212;
+  --tcp-leaf: #2F5D3A;    /* slightly deeper than logo for UX */
+  --tcp-leaf-hover: #23472C;
+  --tcp-gold: #F0B41F;
+  --tcp-smoke: #92B3D4;
+}
+
+body{
+  background: var(--tcp-paper);
+  color: var(--tcp-ink);
+}
+
+/* Links */
+a{
+  color: var(--tcp-copper);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.15em;
+}
+a:hover{
+  color: var(--tcp-copper-hover);
+}
+
+/* Buttons (e.g., search UI, any future buttons) */
+.btn-primary{
+  background-color: var(--tcp-leaf);
+  border-color: var(--tcp-leaf);
+}
+.btn-primary:hover{
+  background-color: var(--tcp-leaf-hover);
+  border-color: var(--tcp-leaf-hover);
+}
+
+/* Subtle “brand” line under the navbar (optional but nice) */
+.navbar{
+  border-bottom: 3px solid color-mix(in srgb, var(--tcp-gold) 65%, transparent);
+}
+
+/* Navbar branding: larger logo, no text title */
+.navbar-brand .navbar-title{
+  display: none;
+}
+
+/* Quarto logo sizing (robust selectors) */
+.navbar .navbar-brand img,
+.navbar .navbar-brand .navbar-logo,
+.navbar .navbar-brand svg{
+  height: 64px !important;   /* try 52–64px */
+  width: auto !important;
+  max-height: none !important;
+}
