@@ -32,3 +32,20 @@ quarto preview
 - Primary domain: https://www.thecuriouspiper.com
 - Netlify site: https://the-curious-piper.netlify.app
 - GA4 Measurement ID: G-MLL9M280YV
+
+NEW TOBACCO REVIEW (copy template)
+
+1) Create folder: posts/[slug]/
+2) Copy template: posts/_templates/review-template.qmd → posts/[slug]/index.qmd
+3) Add images next to the post:
+   - posts/[slug]/thumbnail.jpg (required for card)
+   - other images as needed
+4) Edit YAML:
+   - title, date (include time), description
+   - taxonomy primary_id + primary_name + confidence + tags
+   - ratings (N/F/bite/ghosting)
+   - image-alt (meaningful)
+   - draft: true while writing
+5) Preview locally (quarto preview)
+6) When ready: set draft: false, render, check cards + RSS
+7) Commit + push → Netlify publishes

@@ -1,6 +1,6 @@
 ---
-title: "The Curious Piper"
-description: "A pipe smoking blog exploring pipes, tobaccos, techniques, rituals, and the culture and history behind the craft."
+# title: "The Curious Piper"
+# description: "A pipe smoking blog exploring pipes, tobaccos, techniques, rituals, and the culture and history behind the craft."
 listing:
   contents: posts
   feed: true

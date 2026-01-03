@@ -55,11 +55,19 @@ a:hover{
   display: none;
 }
 
-/* Quarto logo sizing (robust selectors) */
-.navbar .navbar-brand img,
-.navbar .navbar-brand .navbar-logo,
-.navbar .navbar-brand svg{
-  height: 64px !important;   /* try 52–64px */
-  width: auto !important;
-  max-height: none !important;
+/* Centered logo band above navbar (desktop only) */
+.tcp-header-logo{
+  text-align: center;
+  padding: 10px 0 4px 0;
+}
+
+.tcp-header-logo img{
+  height: 56px;   /* mobile default */
+  width: auto;
+}
+
+@media (min-width: 992px){
+  .tcp-header-logo img{
+    height: 128px; /* desktop */
+  }
 }

@@ -1,9 +1,19 @@
 ---
-title: "About"
-image: assets/logo.png
-image-alt: "The Curious Piper logo"
+title: "The Curious Piper"
+# image: assets/profile.png
+# image-alt: "The Curious Piper"
 about:
-  template: jolla
+  template: solana
 ---
 
-About this blog.
+Welcome. The Curious Piper is where I document (and share) my ongoing journey into pipe smoking.
+
+You’ll find pipe tobacco reviews grounded in a consistent tasting framework, plus practical guides on preparation, packing, lighting, cadence, and simple habits that improve flavor and comfort. I’m especially interested in how leaf, cut, moisture, and technique interact — the little variables that can turn the same blend into two very different smokes.
+
+Along the way, I also explore pipes themselves (shapes, materials, engineering), the rituals and culture around the hobby, and the history that makes it feel timeless. My goal is to create clear, honest, beginner-friendly content that still gives experienced smokers something useful to compare notes with.
+
+If you’re new here, start with the latest reviews on the home page — and if you prefer video, you can follow along on YouTube.
+
+---
+
+> **Disclosure:** Some links on this site may be affiliate links. If you choose to buy through them, I may earn a small commission at no extra cost to you. I only recommend products and blends I genuinely believe are worth your attention.

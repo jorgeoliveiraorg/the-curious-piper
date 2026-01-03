@@ -10,22 +10,26 @@ website:
   open-graph: true
   twitter-card: true
   navbar:
-    logo: assets/logo.png
     left:
       - text: Home
         href: index.qmd
+      - text: YouTube
+        href: https://www.youtube.com/@TheCuriousPiper
+      - text: RSS
+        href: index.xml
       - text: About
         href: about.qmd
+  page-footer: 
+    center: "© 2026 The Curious Piper"
     right:
       - icon: youtube
         href: https://www.youtube.com/@TheCuriousPiper
       - icon: rss
         href: index.xml
-  page-footer: 
-    center: "© 2026 The Curious Piper"
 format:
   html:
     theme:
       - litera
+    include-in-header: includes/header.html
     css: styles.css
 
