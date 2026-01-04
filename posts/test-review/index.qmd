@@ -2,7 +2,7 @@
 title: "Peterson My Mixture 965 — Review"
 date: 2026-01-03T09:00:00-05:00
 description: "A cool, leathery English with bright Oriental lift—ideal for slow evening bowls."
-draft: false
+draft: true
 
 # Card thumbnail (post-local). Put thumbnail.jpg in the same folder as the post.
 image: thumbnail.png
