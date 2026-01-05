@@ -4,9 +4,9 @@ project:
 website:
   google-analytics: "G-MLL9M280YV"
   draft-mode: gone
-  description: "A blog built with Quarto"
-  site-url: https://www.thecuriouspiper.com # you must change this appropriately for RSS feeds to work properly
   title: "The Curious Piper"
+  description: "A blog about pipe smoking"
+  site-url: https://www.thecuriouspiper.com
   open-graph: true
   twitter-card: true
   navbar:
@@ -15,21 +15,19 @@ website:
         href: index.qmd
       - text: YouTube
         href: https://www.youtube.com/@TheCuriousPiper
-      - text: RSS
-        href: index.xml
       - text: About
         href: about.qmd
-  page-footer: 
-    center: "© 2026 The Curious Piper"
     right:
-      - icon: youtube
-        href: https://www.youtube.com/@TheCuriousPiper
       - icon: rss
         href: index.xml
+  page-footer: 
+    center: "© 2026 The Curious Piper"
+
 format:
   html:
     theme:
       - litera
-    include-in-header: includes/header.html
+    include-after-body:
+      - includes/title-banner-logo.html
     css: styles.css
 

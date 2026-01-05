@@ -1,11 +1,12 @@
 ---
-# title: "The Curious Piper"
-# description: "A pipe smoking blog exploring pipes, tobaccos, techniques, rituals, and the culture and history behind the craft."
+title: "The Curious Piper"
+description: "A blog about pipe smoking"
 listing:
   contents: posts
   feed: true
   sort: "date desc"
   type: grid
+  fields: [title, description, date, categories, image]
   grid-columns: 2
   categories: true
   sort-ui: false

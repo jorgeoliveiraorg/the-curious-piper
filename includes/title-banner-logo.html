@@ -1,0 +1,33 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const title = document.querySelector(
+      "#title-block-header .quarto-title-banner .quarto-title"
+    );
+    if (!title) return;
+
+    // If logo already exists, just mark the container and stop
+    if (title.querySelector(".tcp-title-logo")) {
+      title.classList.add("tcp-has-title-logo");
+      return;
+    }
+
+    const a = document.createElement("a");
+    a.className = "tcp-title-logo";
+    a.href = "/"; // home
+    a.setAttribute("aria-label", "The Curious Piper home");
+
+    const img = document.createElement("img");
+    img.src = "/assets/logo-320-320.png";
+    img.alt = "The Curious Piper logo";
+    img.loading = "eager";
+    img.decoding = "async";
+
+    a.appendChild(img);
+
+    // Insert logo before the title+description block
+    title.prepend(a);
+
+    // Mark container so CSS can lay it out without :has()
+    title.classList.add("tcp-has-title-logo");
+  });
+</script>

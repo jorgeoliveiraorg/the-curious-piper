@@ -1,19 +1,15 @@
 ---
 title: "The Curious Piper"
-# image: assets/profile.png
-# image-alt: "The Curious Piper"
+image: assets/logo-320-320.png
+image-alt: "The Curious Piper"
 about:
-  template: solana
+  template: trestles
 ---
 
-Welcome. The Curious Piper is where I document (and share) my ongoing journey into pipe smoking.
+Welcome!
 
-You’ll find pipe tobacco reviews grounded in a consistent tasting framework, plus practical guides on preparation, packing, lighting, cadence, and simple habits that improve flavor and comfort. I’m especially interested in how leaf, cut, moisture, and technique interact — the little variables that can turn the same blend into two very different smokes.
+This blog and my YouTube channel are where I share my passion for pipe smoking and document what I learn along the way. Think of it as a friendly workshop and reading nook rolled into one, a place to explore the craft with curiosity, care, and a bit of ritual.
 
-Along the way, I also explore pipes themselves (shapes, materials, engineering), the rituals and culture around the hobby, and the history that makes it feel timeless. My goal is to create clear, honest, beginner-friendly content that still gives experienced smokers something useful to compare notes with.
+You can expect posts and videos that dig into the hobby’s rich tapestry, from pipe shapes and materials to the wide world of tobacco varieties and classic blends. I’ll also cover practical topics like packing, lighting, cadence, and simple techniques that help you get the best flavour and comfort from a bowl, especially if you’re just getting started.
 
-If you’re new here, start with the latest reviews on the home page — and if you prefer video, you can follow along on YouTube.
-
----
-
-> **Disclosure:** Some links on this site may be affiliate links. If you choose to buy through them, I may earn a small commission at no extra cost to you. I only recommend products and blends I genuinely believe are worth your attention.
+Alongside the “how,” I want to explore the “why,” the traditions, culture, and history that make pipe smoking feel timeless. My aim is to create engaging, high-quality content that educates and inspires, whether you’re a beginner, a seasoned enthusiast, or simply curious about what makes this craft so enduring.

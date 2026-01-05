@@ -1,10 +1,14 @@
+/* =========================================
+   The Curious Piper — styles.css (clean)
+   ========================================= */
+
 /* Readability tweak: comfortable measure + spacing */
-main.content {
+main.content{
   max-width: 72ch;
 }
 
 .content p,
-.content li {
+.content li{
   line-height: 1.7;
 }
 
@@ -18,6 +22,15 @@ main.content {
   --tcp-leaf-hover: #23472C;
   --tcp-gold: #F0B41F;
   --tcp-smoke: #92B3D4;
+
+  /* Title banner logo sizing (current values) */
+  --tcp-title-logo: clamp(56px, 10vw, 72px); /* mobile: 56–72px */
+}
+
+@media (min-width: 992px){
+  :root{
+    --tcp-title-logo: clamp(124px, 10vw, 160px); /* desktop: 112–160px */
+  }
 }
 
 body{
@@ -45,29 +58,93 @@ a:hover{
   border-color: var(--tcp-leaf-hover);
 }
 
-/* Subtle “brand” line under the navbar (optional but nice) */
+/* Subtle “brand” line under the navbar */
 .navbar{
   border-bottom: 3px solid color-mix(in srgb, var(--tcp-gold) 65%, transparent);
 }
 
-/* Navbar branding: larger logo, no text title */
+/* Navbar branding: hide text title (since you use a logo elsewhere) */
 .navbar-brand .navbar-title{
   display: none;
 }
 
-/* Centered logo band above navbar (desktop only) */
-.tcp-header-logo{
+/* ==================================================
+   Title banner: logo only (FULL-PAGE centered)
+   Requires the JS to add .tcp-has-title-logo
+   ================================================== */
+
+/*
+  Key fix:
+  Quarto’s .page-columns layout places .column-page-left into a specific grid column,
+  which can visually center relative to the content column, not the viewport.
+
+  Force the title container to span the full grid width so justify-content:center
+  truly centers in the full page width.
+*/
+#title-block-header .quarto-title-banner.page-columns .quarto-title.column-page-left{
+  grid-column: 1 / -1 !important;  /* span full width of the page-columns grid */
+  max-width: none !important;
+  width: 100% !important;
+  justify-self: stretch !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* Make the banner’s title container a centered flex row */
+#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo{
+  display: flex !important;
+  justify-content: center !important; /* viewport-centered once we span full grid */
+  align-items: center !important;
+  gap: 0 !important;
   text-align: center;
-  padding: 10px 0 4px 0;
 }
 
-.tcp-header-logo img{
-  height: 56px;   /* mobile default */
-  width: auto;
+/* Hide title + description (and any other banner text) */
+#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > :not(.tcp-title-logo){
+  display: none !important;
 }
 
-@media (min-width: 992px){
-  .tcp-header-logo img{
-    height: 128px; /* desktop */
-  }
+/* Center the clickable logo */
+#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 0;        /* prevents extra inline spacing */
+  text-decoration: none; /* avoid underline quirks */
+}
+
+/* Ensure the image is crisp and constrained */
+#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo img{
+  width: var(--tcp-title-logo);
+  height: var(--tcp-title-logo);
+  object-fit: contain;
+  display: block;
+}
+
+/* Nice keyboard focus */
+#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo:focus-visible{
+  outline: 2px solid var(--tcp-gold);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+/* ==================================================
+   Litera-specific tightening: reduce leftover banner space
+   ================================================== */
+
+#title-block-header .quarto-title-banner{
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+  min-height: auto !important;
+}
+
+/* If the title meta block exists but is empty/unused, remove its spacing */
+#title-block-header .quarto-title-meta{
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* Hide empty meta block */
+#title-block-header .quarto-title-meta:empty{
+  display: none !important;
 }
