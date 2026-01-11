@@ -1,0 +1,18 @@
+---
+title: "The Curious Piper"
+description: "A blog about pipe smoking"
+listing:
+  contents: posts
+  feed: true
+  sort: "date desc"
+  type: default
+  fields: [image, title, categories, description, date, author]
+  categories: false
+  sort-ui: false
+  filter-ui: false
+  image-align: left
+page-layout: article
+title-block-banner: true
+---
+
+

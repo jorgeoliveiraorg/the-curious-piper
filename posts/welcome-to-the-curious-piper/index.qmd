@@ -1,0 +1,19 @@
+---
+title: "Welcome to The Curious Piper" # Post title
+subtitle: "A blog about pipe smoking" # Optional subtitle
+description: What this blog is about, and what you can expect next. # Short summary used in metadata/search/social
+author: "The Curious Piper" # Post author
+date: 2026-01-10
+# date-modified: [2026-01-01] # Last modification date or last-modified
+categories: [welcome]
+tags: [pipes, tobacco]
+image: thumbnail.jpg
+image-alt: "A tobacco pipe"
+draft: false
+---
+
+Welcome to The Curious Piper. This blog and my YouTube channel are where I share my passion for pipe smoking and document what I learn along the way. Think of it as a friendly workshop and reading nook rolled into one, a place to explore the craft with curiosity, care, and a bit of ritual.
+
+You can expect posts and videos that dig into the hobby’s rich tapestry, from pipe shapes and materials to the wide world of tobacco varieties and classic blends. I’ll also cover practical topics like packing, lighting, cadence, and simple techniques that help you get the best flavour and comfort from a bowl, especially if you’re just getting started.
+
+Alongside the “how,” I want to explore the “why,” the traditions, culture, and history that make pipe smoking feel timeless. My aim is to create engaging, high-quality content that educates and inspires, whether you’re a beginner, a seasoned enthusiast, or simply curious about what makes this craft so enduring.
