@@ -21,11 +21,15 @@ website:
         href: about.qmd
       - text: YouTube
         href: https://www.youtube.com/@TheCuriousPiper
+        target: _blank
+        rel: noopener
       # - text: Instagram
       #   href: https://instagram.com
     right:
       - icon: youtube
         href: https://www.youtube.com/@TheCuriousPiper
+        target: _blank
+        rel: noopener
       - icon: rss
         href: index.xml
 
@@ -34,6 +38,8 @@ website:
     right:
       - icon: youtube
         href: https://www.youtube.com/@TheCuriousPiper
+        target: _blank
+        rel: noopener
       # - icon: instagram
       #   href: https://instagram.com
 
@@ -41,5 +47,6 @@ format:
   html:
     theme: litera
     css: styles.css
+    link-external-newwindow: true
     include-after-body:
       - _includes/after-header-logo.html
