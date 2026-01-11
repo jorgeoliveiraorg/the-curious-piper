@@ -5,13 +5,14 @@ listing:
   contents: posts
   feed: true
   sort: "date desc"
-  type: grid
-  fields: [title, description, date, categories, image]
-  grid-columns: 2
-  categories: true
+  type: default
+  fields: [image, title, categories, description, date, author]
+  categories: false
   sort-ui: false
   filter-ui: false
-page-layout: full
+  image-align: left
+page-layout: article
 title-block-banner: true
 ---
+
 

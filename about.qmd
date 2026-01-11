@@ -1,9 +1,14 @@
 ---
 title: "The Curious Piper"
-image: assets/logo-320-320.png
-image-alt: "The Curious Piper"
 about:
   template: trestles
+  links:
+    - icon: youtube
+      text: YouTube
+      href: https://www.youtube.com/@TheCuriousPiper
+    # - icon: instagram
+    #   text: Instagram
+    #   href: https://instagram.com
 ---
 
 Welcome!

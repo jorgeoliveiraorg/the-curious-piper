@@ -1,0 +1,40 @@
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // Avoid duplicates
+    if (document.getElementById("tcp-between-header-logo")) return;
+
+    const quartoHeader = document.querySelector("#quarto-header");
+    const titleBlock = document.querySelector("#title-block-header");
+    if (!quartoHeader || !titleBlock) return;
+
+    // Quarto provides the correct relative offset to site root (./, ../, ../../, etc.)
+    const offset =
+      document.querySelector('meta[name="quarto:offset"]')?.getAttribute("content") || "./";
+
+    // Build URLs that work from any page depth (posts, pages, home)
+    const homeHref = `${offset}index.html`;
+    const logoSrc = `${offset}assets/tcp-logo-560.png`;
+
+    const wrap = document.createElement("div");
+    wrap.id = "tcp-between-header-logo";
+    wrap.className = "tcp-between-header-logo";
+
+    const a = document.createElement("a");
+    a.className = "tcp-between-header-logo__link";
+    a.href = homeHref;
+    a.setAttribute("aria-label", "The Curious Piper home");
+
+    const img = document.createElement("img");
+    img.className = "tcp-between-header-logo__img";
+    img.src = logoSrc;
+    img.alt = "The Curious Piper logo";
+    img.loading = "eager";
+    img.decoding = "async";
+
+    a.appendChild(img);
+    wrap.appendChild(a);
+
+    // Insert exactly between navbar header and title block
+    titleBlock.parentNode.insertBefore(wrap, titleBlock);
+  });
+</script>

@@ -1,150 +1,263 @@
-/* =========================================
-   The Curious Piper — styles.css (clean)
-   ========================================= */
+/* The Curious Piper — styles.css (Litera)
+   Palette + typography + listings + navbar + header logo */
 
-/* Readability tweak: comfortable measure + spacing */
-main.content{
-  max-width: 72ch;
+/* Variables */
+:root{
+  /* Content width */
+  --tcp-measure: 86ch;
+
+  /* Neutrals */
+  --tcp-ink:        #0D1C15;  /* deep green-black (text) */
+  --tcp-paper:      #F7F7F5;  /* warm cream (page background) */
+  --tcp-surface:    #FBF9F2;  /* clean card/section background */
+  --tcp-border:     #DCDFAE;  /* soft divider/border */
+  --tcp-muted:      #3E4C26;  /* muted text (meta, captions) */
+
+  /* Greens */
+  --tcp-leaf:       #1E4F2A;  /* primary green (links, accents) */
+  --tcp-leaf-hover: #143223;  /* darker forest (hover/active) */
+  --tcp-olive:      #7F8B2D;  /* secondary green */
+  --tcp-olive-deep: #3A4D1C;  /* deep olive */
+
+  /* Accent */
+  --tcp-amber:       #D78007; /* accent (CTAs, highlights) */
+  --tcp-amber-hover: #BE7006; /* hover (AA contrast with --tcp-ink) */
+
+  /* Tint */
+  --tcp-sage:       #BCC294;  /* gentle sage */
+
+  /* Listing thumbnail size */
+  --tcp-listing-thumb: clamp(104px, 16vw, 160px);
+
+  /* Navbar height */
+  --tcp-navbar-height: 3.25rem;
 }
 
+/* Typography */
 .content p,
 .content li{
   line-height: 1.7;
 }
 
-/* --- The Curious Piper palette (from logo) --- */
-:root{
-  --tcp-ink: #0B0D13;     /* readable charcoal */
-  --tcp-paper: #F9F5E8;   /* warm parchment */
-  --tcp-copper: #C2410C;  /* deepened orange for link contrast */
-  --tcp-copper-hover: #7D3212;
-  --tcp-leaf: #2F5D3A;    /* slightly deeper than logo for UX */
-  --tcp-leaf-hover: #23472C;
-  --tcp-gold: #F0B41F;
-  --tcp-smoke: #92B3D4;
-
-  /* Title banner logo sizing (current values) */
-  --tcp-title-logo: clamp(56px, 10vw, 72px); /* mobile: 56–72px */
-}
-
-@media (min-width: 992px){
-  :root{
-    --tcp-title-logo: clamp(124px, 10vw, 160px); /* desktop: 112–160px */
-  }
-}
-
+/* Page */
 body{
   background: var(--tcp-paper);
   color: var(--tcp-ink);
 }
 
+/* Title banner colors */
+#title-block-header,
+#title-block-header .quarto-title-banner{
+  background: var(--tcp-paper) !important;
+  color: inherit;
+  border: 0 !important;
+  box-shadow: none !important;
+}
+
+/* Muted text */
+.text-muted,
+.quarto-title-meta,
+.quarto-title-meta-contents,
+.quarto-listing .listing-date{
+  color: var(--tcp-muted) !important;
+}
+
 /* Links */
 a{
-  color: var(--tcp-copper);
+  color: var(--tcp-leaf);
   text-decoration-thickness: 0.08em;
   text-underline-offset: 0.15em;
 }
+
 a:hover{
-  color: var(--tcp-copper-hover);
+  color: var(--tcp-leaf-hover);
 }
 
-/* Buttons (e.g., search UI, any future buttons) */
+a:visited{
+  /* Fallback without color-mix() */
+  color: #1A4225;
+  color: color-mix(in srgb, var(--tcp-leaf) 75%, var(--tcp-ink));
+}
+
+/* Focus ring */
+a:focus-visible,
+.btn:focus-visible,
+.btn-primary:focus-visible{
+  outline: 3px solid var(--tcp-amber-hover);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* Keep links readable in muted areas */
+.text-muted a,
+.quarto-title-meta a,
+.quarto-title-meta-contents a,
+.quarto-listing .listing-date a{
+  color: var(--tcp-leaf) !important;
+}
+
+.text-muted a:hover,
+.quarto-title-meta a:hover,
+.quarto-title-meta-contents a:hover,
+.quarto-listing .listing-date a:hover{
+  color: var(--tcp-leaf-hover) !important;
+}
+
+/* Buttons */
 .btn-primary{
-  background-color: var(--tcp-leaf);
-  border-color: var(--tcp-leaf);
-}
-.btn-primary:hover{
-  background-color: var(--tcp-leaf-hover);
-  border-color: var(--tcp-leaf-hover);
+  background-color: var(--tcp-amber);
+  border-color: var(--tcp-amber);
+  color: var(--tcp-ink);
 }
 
-/* Subtle “brand” line under the navbar */
-.navbar{
-  border-bottom: 3px solid color-mix(in srgb, var(--tcp-gold) 65%, transparent);
+.btn-primary:hover,
+.btn-primary:focus{
+  background-color: var(--tcp-amber-hover);
+  border-color: var(--tcp-amber-hover);
+  color: var(--tcp-ink);
 }
 
-/* Navbar branding: hide text title (since you use a logo elsewhere) */
-.navbar-brand .navbar-title{
-  display: none;
+/* Cards & borders */
+.card,
+.quarto-listing .card{
+  background: var(--tcp-surface);
+  border-color: var(--tcp-border);
 }
 
-/* ==================================================
-   Title banner: logo only (FULL-PAGE centered)
-   Requires the JS to add .tcp-has-title-logo
-   ================================================== */
-
-/*
-  Key fix:
-  Quarto’s .page-columns layout places .column-page-left into a specific grid column,
-  which can visually center relative to the content column, not the viewport.
-
-  Force the title container to span the full grid width so justify-content:center
-  truly centers in the full page width.
-*/
-#title-block-header .quarto-title-banner.page-columns .quarto-title.column-page-left{
-  grid-column: 1 / -1 !important;  /* span full width of the page-columns grid */
-  max-width: none !important;
-  width: 100% !important;
-  justify-self: stretch !important;
-  margin-left: 0 !important;
-  margin-right: 0 !important;
+hr{
+  border-color: var(--tcp-border);
 }
 
-/* Make the banner’s title container a centered flex row */
-#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo{
-  display: flex !important;
-  justify-content: center !important; /* viewport-centered once we span full grid */
-  align-items: center !important;
-  gap: 0 !important;
-  text-align: center;
+/* Navbar */
+#quarto-header .navbar{
+  /* Border accent */
+  border-bottom: 3px solid rgba(215, 128, 7, 0.55);
+  border-bottom: 3px solid color-mix(in srgb, var(--tcp-amber) 55%, transparent);
+
+  /* Fixed height */
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  min-height: var(--tcp-navbar-height);
 }
 
-/* Hide title + description (and any other banner text) */
-#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > :not(.tcp-title-logo){
-  display: none !important;
+/* Center items + constrain width */
+#quarto-header .navbar .navbar-container{
+  min-height: var(--tcp-navbar-height);
+  align-items: center;
+
+  max-width: var(--tcp-measure);
+  margin-left: auto;
+  margin-right: auto;
+
+  /* Side padding */
+  padding-left: var(--bs-gutter-x, 1rem);
+  padding-right: var(--bs-gutter-x, 1rem);
 }
 
-/* Center the clickable logo */
-#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo{
+/* Brand sizing */
+#quarto-header .navbar .navbar-brand{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: var(--tcp-navbar-height);
   display: inline-flex;
   align-items: center;
-  justify-content: center;
-  line-height: 0;        /* prevents extra inline spacing */
-  text-decoration: none; /* avoid underline quirks */
 }
 
-/* Ensure the image is crisp and constrained */
-#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo img{
-  width: var(--tcp-title-logo);
-  height: var(--tcp-title-logo);
-  object-fit: contain;
+/* Toggler sizing */
+#quarto-header .navbar .navbar-toggler{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: var(--tcp-navbar-height);
+  line-height: 1;
+}
+
+/* Toggler visibility */
+@media (max-width: 991.98px){
+  #quarto-header .navbar .navbar-toggler{
+    display: inline-flex;
+    align-items: center;
+  }
+}
+
+@media (min-width: 992px){
+  #quarto-header .navbar .navbar-toggler{
+    display: none !important;
+  }
+}
+
+/* Search sizing */
+#quarto-header .navbar #quarto-search{
+  height: var(--tcp-navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Link hit area */
+#quarto-header .navbar .navbar-nav .nav-link{
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  height: var(--tcp-navbar-height);
+  display: flex;
+  align-items: center;
+}
+
+/* Listing thumbnails: square (image-left) */
+
+/* Fixed square column */
+.quarto-post.image-left .thumbnail{
+  width: var(--tcp-listing-thumb);
+  flex: 0 0 var(--tcp-listing-thumb);
+}
+
+/* Link fills column */
+.quarto-post.image-left .thumbnail > a{
+  display: block;
+  width: 100%;
+}
+
+/* Handle wrapped thumbnails */
+.quarto-post.image-left .thumbnail p{
+  margin: 0;
+}
+
+/* Square crop */
+.quarto-post.image-left .thumbnail img.thumbnail-image{
+  display: block;
+  width: 100% !important;
+  height: var(--tcp-listing-thumb) !important;
+
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+
+  /* Rounded corners */
+  border-radius: 0.375rem;
+}
+
+/* Between-header logo */
+.tcp-between-header-logo{
+  background: var(--tcp-paper);
+  padding: 0.85rem 0 0.35rem;
+}
+
+.tcp-between-header-logo__link{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.tcp-between-header-logo__img{
+  /* Responsive size */
+  height: clamp(84px, 10vw, 160px);
+  width: auto;
+  max-width: 100%;
   display: block;
 }
 
-/* Nice keyboard focus */
-#title-block-header .quarto-title-banner .quarto-title.tcp-has-title-logo > .tcp-title-logo:focus-visible{
-  outline: 2px solid var(--tcp-gold);
+/* Focus */
+.tcp-between-header-logo__link:focus-visible{
+  outline: 3px solid var(--tcp-amber-hover);
   outline-offset: 4px;
-  border-radius: 8px;
-}
-
-/* ==================================================
-   Litera-specific tightening: reduce leftover banner space
-   ================================================== */
-
-#title-block-header .quarto-title-banner{
-  padding-top: 0.75rem !important;
-  padding-bottom: 0.75rem !important;
-  min-height: auto !important;
-}
-
-/* If the title meta block exists but is empty/unused, remove its spacing */
-#title-block-header .quarto-title-meta{
-  margin-top: 0 !important;
-  padding-top: 0 !important;
-}
-
-/* Hide empty meta block */
-#title-block-header .quarto-title-meta:empty{
-  display: none !important;
+  border-radius: 10px;
 }

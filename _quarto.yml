@@ -1,5 +1,7 @@
 project:
   type: website
+  resources:
+    - assets/**
 
 website:
   google-analytics: "G-MLL9M280YV"
@@ -9,25 +11,35 @@ website:
   site-url: https://www.thecuriouspiper.com
   open-graph: true
   twitter-card: true
+  
   navbar:
+    title: false
     left:
       - text: Home
         href: index.qmd
-      - text: YouTube
-        href: https://www.youtube.com/@TheCuriousPiper
       - text: About
         href: about.qmd
+      - text: YouTube
+        href: https://www.youtube.com/@TheCuriousPiper
+      # - text: Instagram
+      #   href: https://instagram.com
     right:
+      - icon: youtube
+        href: https://www.youtube.com/@TheCuriousPiper
       - icon: rss
         href: index.xml
+
   page-footer: 
     center: "© 2026 The Curious Piper"
+    right:
+      - icon: youtube
+        href: https://www.youtube.com/@TheCuriousPiper
+      # - icon: instagram
+      #   href: https://instagram.com
 
 format:
   html:
-    theme:
-      - litera
-    include-after-body:
-      - includes/title-banner-logo.html
+    theme: litera
     css: styles.css
-
+    include-after-body:
+      - _includes/after-header-logo.html

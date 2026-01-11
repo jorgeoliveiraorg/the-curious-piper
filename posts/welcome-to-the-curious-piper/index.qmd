@@ -1,10 +1,15 @@
 ---
-draft: false
-title: "Welcome to The Curious Piper"
-date: 2026-01-01T09:00:00-05:00
-description: "What this blog is about, and what you can expect next."
-image: thumbnail.jpg
+title: "Welcome to The Curious Piper" # Post title
+subtitle: "A blog about pipe smoking" # Optional subtitle
+description: What this blog is about, and what you can expect next. # Short summary used in metadata/search/social
+author: "The Curious Piper" # Post author
+date: 2026-01-10
+# date-modified: [2026-01-01] # Last modification date or last-modified
 categories: [welcome]
+tags: [pipes, tobacco]
+image: thumbnail.jpg
+image-alt: "A tobacco pipe"
+draft: false
 ---
 
 Welcome to The Curious Piper. This blog and my YouTube channel are where I share my passion for pipe smoking and document what I learn along the way. Think of it as a friendly workshop and reading nook rolled into one, a place to explore the craft with curiosity, care, and a bit of ritual.
